@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Weather App</h1>
+            <p class="subtitle">Get current weather conditions for any city</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        class="city-input" 
+                        placeholder="Enter city name (e.g., London, New York)"
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn" class="search-btn">
+                        <span class="btn-text">Get Weather</span>
+                        <span class="btn-loading" style="display: none;">Loading...</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;">
+                <p id="errorText"></p>
+            </div>
+
+            <!-- Weather Display Section -->
+            <section id="weatherSection" class="weather-section" style="display: none;">
+                <div class="weather-card">
+                    <div class="weather-header">
+                        <h2 id="cityName" class="city-name"></h2>
+                        <p id="currentDate" class="current-date"></p>
+                    </div>
+                    
+                    <div class="weather-main">
+                        <div class="temperature-section">
+                            <img id="weatherIcon" class="weather-icon" src="/placeholder.svg" alt="Weather icon">
+                            <div class="temperature-info">
+                                <span id="temperature" class="temperature"></span>
+                                <span class="temperature-unit">°C</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-description">
+                            <p id="weatherDescription" class="description"></p>
+                            <p id="feelsLike" class="feels-like"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Humidity</span>
+                            <span id="humidity" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Wind Speed</span>
+                            <span id="windSpeed" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pressure</span>
+                            <span id="pressure" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Visibility</span>
+                            <span id="visibility" class="detail-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Weather App. Powered by OpenWeatherMap API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
